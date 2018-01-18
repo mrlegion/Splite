@@ -10,15 +10,14 @@ namespace Splite
     {
         static void Main(string[] args)
         {
-            var ps = new PageSizeCollectionGeneration(20, true);
-            var temp = ps.GetCollection;
-            foreach (var obj in temp)
-                Console.WriteLine($"size: [0] {obj[0]}; [1] {obj[1]}; [2] {obj[2]}; [3] {obj[3]}");
+            var ps = new PageSizeCollectionGeneration(100, true);
+
+            var splite = new SpliteDocument(ps.GetCollection);
+            splite.DebugPrintBaseArray();
 
             Console.WriteLine(new string('-', 50));
 
-            var splite = new SpliteDocument(temp);
-            splite.DebugPrintBaseArray();
+            splite.DebugPrintResultArray();
 
             // Delay
             Console.ReadKey();
