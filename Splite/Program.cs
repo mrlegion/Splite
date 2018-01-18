@@ -14,6 +14,14 @@ namespace Splite
             var temp = ps.GetCollection;
             foreach (var obj in temp)
                 Console.WriteLine($"size: [0] {obj[0]}; [1] {obj[1]}; [2] {obj[2]}; [3] {obj[3]}");
+
+            Console.WriteLine(new string('-', 50));
+
+            var splite = new SpliteDocument(temp);
+            splite.DebugPrintBaseArray();
+
+            // Delay
+            Console.ReadKey();
         }
     }
 }
