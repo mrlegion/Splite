@@ -10,6 +10,10 @@ namespace Splite
     {
         static void Main(string[] args)
         {
+            var ps = new PageSizeCollectionGeneration(20, true);
+            var temp = ps.GetCollection;
+            foreach (var obj in temp)
+                Console.WriteLine($"size: [0] {obj[0]}; [1] {obj[1]}; [2] {obj[2]}; [3] {obj[3]}");
         }
     }
 }
